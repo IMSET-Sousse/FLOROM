@@ -1,5 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0 solid transparent;
+  }
+  /* navbar */
 #logo{
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* carousel */
+
+#carouselExampleFade img{
+object-fit: cover;
+height: 500px;
+}
+
+
+.quot h1{
+text-align: center;
+margin-top: 20px;
+margin-bottom: 20px;
+color: #D1B3C4;
+}
+.quot p{
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 200px;
 }
