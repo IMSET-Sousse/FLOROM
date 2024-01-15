@@ -9,12 +9,6 @@
     margin-left: auto;
     margin-right: auto;
 }
-#subNavContainer{
-    list-style-type: none;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-}
 /* carousel */
 
 #carouselExampleFade img{
@@ -33,6 +27,8 @@ color: #D1B3C4;
     text-align: center;
     margin-left: 200px;
     margin-right: 200px;
+    font-weight: 200;
+    line-height: 25px;
 }
 
 /* wrapper */
@@ -43,7 +39,7 @@ color: #D1B3C4;
 }
 .photobanner {
 	position: relative;
-	height: 233px;
+	height: 350px;
 	margin-bottom: 30px;
     margin-top: 30px;
 	display: flex;
@@ -64,6 +60,104 @@ color: #D1B3C4;
     left: 0px;
   }
   to {
-    left: -1000px;
+    left: -1600px;
   }
+}
+
+
+.bride{
+  margin-top: 100px;
+    margin-bottom: 50px;
+
+}
+.left{
+    position: relative;
+    padding-left: 30px;
+    width: 50%;
+    float: left;
+    margin-top: 100px;
+   
+}
+.left h2{
+    text-align: center;
+    font-style: italic;
+    font-weight: 400;
+}
+.left p{
+    margin-top: 50px;
+    text-align:center;
+    font-weight: 200;
+    line-height: 30px;
+    
+}
+
+.right{
+  margin-bottom: 100px;
+    padding-right: 60px;
+    width: 50%;
+    float: right;
+}
+.right img{
+    width:400px;
+    float: right;
+  
+}
+
+.bn3 {
+  display: inline-block;
+  padding: 0.5em 1.7em;
+  margin: 0 0.1em 0.1em 0;
+  margin-left: 45%;
+  margin-top: 30px;
+  margin-bottom: 100px;
+  border: 0.16em solid #E8C2CA;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: black;
+  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.bn3:hover {
+  color: black;
+  background-color: #E8C2CA;
+}
+
+.groom{
+  margin-top: 100px;
+  width: 100%;
+}
+.g-left {
+  float: left;
+  width: 50%;
+  margin-bottom: 100px;
+    padding-left: 60px;
+}
+.g-left img{
+  margin-top: 100px;
+  width: 400px;
+  float: left;
+}
+.g-right{
+  position: relative;
+  padding-right: 30px;
+  width: 50%;
+  float: right;
+  margin-top: 200px;
+}
+
+.g-right h2{
+  text-align: center;
+    font-style: italic;
+    font-weight: 400;
+}
+.g-right p{
+  margin-top: 50px;
+  text-align:center;
+  font-weight: 200;
+  line-height: 30px;
 }
