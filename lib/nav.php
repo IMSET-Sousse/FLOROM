@@ -1,8 +1,9 @@
+<?php include_once('lib\auth-required.php'); ?>
+
 <!-- top-bar -->
 <div class="top-bar">
     <a class="bar-brand" href="home.php"><img src="image/logo.png" id="logo" /></a>
-    <i class="fa-regular fa-heart fa-xl" id="fa1" style="color: #d1b3c4;"></i>
-    <i class="fa-regular fa-user fa-xl" id="fa2" style="color: #d1b3c4;"></i>
+
 </div>
 <!-- navbar -->
 <div class="border-bottom border-top sticky-top" id="subNavContainer">
@@ -72,8 +73,15 @@
                         <a class="nav-link mx-2" href="#">ABOUT US</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-2" href="contact.html">CONTACT US</a>
+                        <a class="nav-link mx-2" href="contact.php">CONTACT US</a>
                     </li>
+
+                    <a href="#"> <i class="fa-regular fa-heart fa-xl" id="fa1" style="color: #d1b3c4;"></i></a>
+                    <?php if ($logedin == TRUE) { ?>
+                    <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket fa-xl" id="fa2" style="color: #d1b3c4;"></i></a> <?php } else { ?>
+    <a href="login.php"> <i class="fa-regular fa-user fa-xl" id="fa2" style="color: #d1b3c4;"></i></a>
+   <a href="signup.php"> <i class="fa-solid fa-user-plus fa-xl" id="fa3" style="color: #d1b3c4;"></i></a>
+    <?php } ?>
                 </ul>
             </div>
         </div>

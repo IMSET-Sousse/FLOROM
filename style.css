@@ -22,15 +22,22 @@
   margin-right: auto;
 }
 #fa1 {
-  margin-right: 40px;
+  margin-right: 120px;
   position: absolute;
-  top: 50px;
-  right: 50px;
+  top: 30px;
+  right: 70px;
 }
 #fa2 {
+  margin-right: 70px;
   position: absolute;
-  top: 50px;
-  right: 40px;
+  top: 30px;
+  right: 70px;
+}
+#fa3 {
+  margin-right: 10px;
+  position: absolute;
+  top: 30px;
+  right: 70px;
 }
 /* navbar */
 
@@ -193,23 +200,25 @@
 /*contact*/
 
 .container {
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 50px;
   width: 100%;
-  border-radius: 0;
+
 }
 .container h1 {
   text-align: center;
   color: #d1b3c4;
+  margin-bottom: 50px;
 }
 .row {
   width: 70%;
   position: absolute;
   left: 50%;
-  top: 60%;
+  top: 95%;
   transform: translate(-50%, -50%);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 .col-md-7 {
   padding: 20px;
