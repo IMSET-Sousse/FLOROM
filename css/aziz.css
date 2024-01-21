@@ -1,3 +1,32 @@
+/* topbar*/
+.border-bottom{
+  background-color: white;
+  z-index: -9999;
+}
+
+.top-bar {
+  width: 100%;
+}
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#fa1 {
+  margin-right: 40px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+#fa2 {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+}
+/* navbar */
+
+
+
 .info_section .info_logo {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -72,7 +101,7 @@
   
   .product_section .box .detail-box a {
     font-size: 18px;
-    color: #df0000;
+    color: #d1b3c4;
   }
   
   .product_section .box .detail-box .price_heading {
@@ -124,7 +153,7 @@
   hr.style-five {
     border: 1;
     height: 0; /* Firefox... */
-    box-shadow: 0 0 10px 1px rgb(167, 61, 61);
+    box-shadow: 0 0 10px 1px #d1b3c4(167, 61, 61);
 }
 hr.style-five:after {  /* Not really supposed to work, but does */
     content: "\00a0";  /* Prevent margin collapse */

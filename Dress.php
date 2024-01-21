@@ -4,18 +4,19 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Florom</title>
+  <title>FLOROM</title>
 
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <link
+   <!-- bootstrap core css -->
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <!-- bootstrap-links -->
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-  <!-- fonts style -->
+    <!-- fontawsom link -->
+    <script src="https://kit.fontawesome.com/1ed826f313.js" crossorigin="anonymous"></script>
 
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
@@ -32,140 +33,12 @@
 
 </style>
 <body>
-
-    <div class="top-bar">
-        <a class="bar-brand" href="home.html"><img src="images/logo.png" id="logo" /></a>
-      </div>
-      <!-- navbar -->
-      <div class="border-bottom border-top" id="subNavContainer">
-        <nav class="navbar navbar-expand-md">
-          <div class="container-fluid">
-            <button
-              class="navbar-toggler mx-auto"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNavDropdown"
-              aria-controls="navbarNavDropdown"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <i class="fas fa-bars me-2"></i> Menu
-            </button>
-  
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav mx-auto">
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link mx-2 dropdown-toggle"
-                    href="#"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    DRESSES
-                  </a>
-                  <ul class="dropdown-menu"
-                    aria-labelledby="navbarDropdownMenuLink">
-                    <li>
-                      <a class="dropdown-item" href="All.html">All</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="Little.html">Little White Dresses</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="Long.html">long Sleeves</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="OffThe.html">Off The Shoulder</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="BallGown.html">Ball Gown</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="A-line.html">A-line</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="Mermaid-Fishtail.html">Mermaid/Fishtail</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="Fit-flare.html">Fit and Flare</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="Column-Sheath.html">Column/Sheath</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link mx-2 dropdown-toggle"
-                    href="#"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    TUXEDOS
-                  </a>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="navbarDropdownMenuLink"
-                  >
-                    <li><a class="dropdown-item" href="Tuxedos.html">All</a></li>
-                    <li><a class="dropdown-item" href="#">Burgundy Tuxedo</a></li>
-                    <li><a class="dropdown-item" href="#">Peak lapel</a></li>
-                    <li><a class="dropdown-item" href="#">Notch lapel</a></li>
-                    <li><a class="dropdown-item" href="#">Cummerbund</a></li>
-                    <li><a class="dropdown-item" href="#">Slim Fit suits</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link mx-2 dropdown-toggle"
-                    href="#"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-bs-toggle="dropdown"0
-                    aria-expanded="false"
-                  >
-                    ACCESORIS
-                  </a>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="navbarDropdownMenuLink"
-                  >
-                  
-                    <li><a class="dropdown-item" href="#">All</a></li>
-                    <li><a class="dropdown-item" href="#">Veils</a></li>
-                    <li><a class="dropdown-item" href="#">Headpieces</a></li>
-                    <li><a class="dropdown-item" href="#">Earrings</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Capes+Overskirts</a>
-                    </li>
-                    <li><a class="dropdown-item" href="#">Ties</a></li>
-                    <li><a class="dropdown-item" href="#">Bowties</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-2" href="#">BLOG</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-2" href="#">ABOUT US</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-2" href="#">CONTACT US</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
+<?php include("./lib/nav.php") ?>
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous">
       </script>
-        <hr class="style-five">
-
 <br><br>
 
   <section class="product_section layout_padding2-top layout_padding-bottom">

@@ -6,17 +6,7 @@
 }
 
 
-#fa1 {
-  margin-right: 40px;
-  position: absolute;
-  top: 50px;
-  right: 50px;
-}
-#fa2 {
-  position: absolute;
-  top: 50px;
-  right: 40px;
-}
+
 /* topbar*/
 .border-bottom{
   background-color: white;
@@ -30,6 +20,17 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+#fa1 {
+  margin-right: 40px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+#fa2 {
+  position: absolute;
+  top: 50px;
+  right: 40px;
 }
 /* navbar */
 
