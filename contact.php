@@ -47,82 +47,70 @@ if (isset($_POST) && $_POST) {
   <?php include("./lib/nav.php") ?>
   
   <!-- contact -->
-    <section class="container">
-      <div class="cont-fluid">
-      <h1>Contact</h1>
-      <div class="row">
-        <div class="col-md-7">
-          <h4>Get in Touch</h4>
-          <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label" name="name">Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="formGroupExampleInput"
-              placeholder="Enter your name"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label" name="email">Email</label>
-            <input
-              type="text"
-              class="form-control"
-              id="formGroupExampleInput2"
-              placeholder="Enter your email"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label" name="subject"
-              >Subject</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="formGroupExampleInput2"
-              placeholder="Enter your number"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label" name="message"
-              >Message</label
-            >
-            <textarea
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="3"
-            ></textarea>
-          </div>
-          <button class="btn btn-primary" type="submit" id="button">Send</button>
-        </div>
-        <div class="col-md-5">
-          <h4>Our Contact</h4>
-          <hr />
-          <div class="mt-4">
-            <div class="d-flex">
-              <i class="bi bi-geo-alt-fill"></i>
-              <p>Address: 198 West 21th Street, Suite 721 New York NY 10016</p>
+  <section class="contact-section" id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-box">
+      <div class="contact-left">
+        <h3>Send yor request</h3>
+        <form action="contact.php" method="post">
+          <div class="input-row">
+            <div class="input-groupe">
+              <lable for="name">Name</lable>
+              <input id="name" name="name" type="text" placeholder="Name">
             </div>
-            <hr />
-            <div class="d-flex">
-              <i class="bi bi-telephone-fill"></i>
-              <p>Contact :- 8888888888</p>
+
+            <div class="input-groupe">
+              <lable for="email">Email</lable>
+              <input id="email" name="email" type="email" placeholder="Example@gmail.com">
             </div>
-            <hr />
-            <div class="d-flex">
-              <i class="bi bi-envelope-fill"></i>
-              <p>Email:- florom@gmail.com</p>
-            </div>
-            <hr />
-            <div class="d-flex">
-              <i class="bi bi-browser-chrome"></i>
-              <p>Website: www.florom.com</p>
-            </div>
-            <hr />
+
           </div>
-        </div>
+
+          <div class="input-row">
+            <div class="input-groupe">
+              <lable for="number">Phone number</lable>
+              <input id="number" name="number" type="number" placeholder="phone number">
+            </div>
+
+            <div class="input-groupe">
+              <lable for="subject">subject</lable>
+              <input id="subject" name="subject" type="text" placeholder="Service demo">
+            </div>
+          </div>
+          <lable for="message">Message</lable>
+          <textarea name="message" id="message" rows="5" placeholder="Leave a message"></textarea>
+          <button type="submit">Send</button>
+
+        </form>
       </div>
+      <div class="contact-right">
+        <h3>Reach Us</h3>
+        <table>
+          <tr>
+            <td>Email:</td>
+            <td>contactus@example.com</td>
+          </tr>
+
+          <tr>
+            <td>Phone:</td>
+            <td>+00 012 345 857</td>
+          </tr>
+
+          <tr>
+            <td>Adress:</td>
+            <td>#Los Angelos ,445 Grounf floor<br>
+              7th cross, 28 Axander Rode<br>
+            </td>
+          </tr>
+
+          <tr>
+            <td><i class="fa-brands fa-whatsapp fa-2xl" style="color: #ffffff;"></i></td>
+            <td><i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i></td>
+          </tr>
+        </table>
       </div>
-    </section>
+    </div>
+  </section>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
