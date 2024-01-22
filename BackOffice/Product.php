@@ -33,14 +33,6 @@ justify-content: space-between;
 background-color: #B6BBC4;
 }
 
-img {
-
-
-height: 80px;
-width: 60px;
-
-}
-
 
 nav ul li {
 display: inline;
@@ -66,15 +58,13 @@ border-style:solid ;
 hr.center-ball {
   background: grey;
 }
-hr {
-  border: 0;
-  height: 9px;
-  width: 80%;
-  position: relative;
-  margin: 30px auto;
-}
 
+   
 hr {
+  color: #999; 
+    height: 2px; 
+    margin: 20px 0; 
+  
   display: block;
   unicode-bidi: isolate;
   margin-block-start: 01.5em;
