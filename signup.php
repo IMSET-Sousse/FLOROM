@@ -1,5 +1,4 @@
 <?php
-session_start(); // Start the session
 include_once("lib\connection.php");
 
 if (isset($_POST['submit'])) {

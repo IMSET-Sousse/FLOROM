@@ -22,19 +22,19 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="Dress.php">All</a></li>
                             <li>
-                                <a class="dropdown-item" href="product\Little.php">Little White Dresses</a>
+                                <a class="dropdown-item" href="#">Little White Dresses</a>
                             </li>
-                            <li><a class="dropdown-item" href="product\Long.php">long Sleeves</a></li>
+                            <li><a class="dropdown-item" href="#">long Sleeves</a></li>
                             <li>
-                                <a class="dropdown-item" href="product\OffThe.php">Off The Shoulder</a>
+                                <a class="dropdown-item" href="#">Off The Shoulder</a>
                             </li>
-                            <li><a class="dropdown-item" href="product\BallGown.php">Ball Gown</a></li>
-                            <li><a class="dropdown-item" href="product\A-line.php">A-line</a></li>
+                            <li><a class="dropdown-item" href="#">Ball Gown</a></li>
+                            <li><a class="dropdown-item" href="#">A-line</a></li>
                             <li>
-                                <a class="dropdown-item" href="product\Mermaid-Fishtail.php">Mermaid/Fishtail</a>
+                                <a class="dropdown-item" href="#">Mermaid/Fishtail</a>
                             </li>
-                            <li><a class="dropdown-item" href="product\Fit-flare.php">Fit and Flare</a></li>
-                            <li><a class="dropdown-item" href="product\Column-Sheath.php">Column/Sheath</a></li>
+                            <li><a class="dropdown-item" href="#">Fit and Flare</a></li>
+                            <li><a class="dropdown-item" href="#">Column/Sheath</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">

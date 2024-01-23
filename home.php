@@ -14,10 +14,28 @@
     />
     <!-- fontawsom link -->
     <script src="https://kit.fontawesome.com/1ed826f313.js" crossorigin="anonymous"></script>
+    <style>
+        .welcome-message {
+            font-size: 22px;
+            font-weight: bold;
+            color: grey;
+            text-transform: capitalize;
+            text-align: center;
+            
+        }
+    </style>
   </head>
   <body>
   <!--navbar start-->
+  
   <?php include("./lib/nav.php") ?>
+  
+    <?php 
+        if ($logedin == TRUE) {
+            echo "<p class='welcome-message'>Hello, " . $_SESSION["name"] . "</p>";
+        }
+    ?>
+
   <!--navbar end-->
     <!-- carousel -->
     <div id="carouselExampleFade" class="carousel slide carousel-fade">
