@@ -16,7 +16,7 @@ if(isset($_POST['update_product'])){
       $message[] = 'please fill out all!';    
    }else{
 
-      $update_data = "UPDATE product SET name='$product_name', price='$product_price', image='$product_image'  WHERE id = '$id'";
+      $update_data = "UPDATE dashboard SET name='$product_name', price='$product_price', image='$product_image'  WHERE id = '$id'";
       $upload = mysqli_query($conn, $update_data);
 
       if($upload){
@@ -58,7 +58,7 @@ if(isset($_POST['update_product'])){
 
    <?php
       
-      $select = mysqli_query($conn, "SELECT * FROM product WHERE id = '$id'");
+      $select = mysqli_query($conn, "SELECT * FROM dashboard WHERE id = '$id'");
       while($row = mysqli_fetch_assoc($select)){
 
    ?>

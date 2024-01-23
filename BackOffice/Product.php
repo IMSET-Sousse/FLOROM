@@ -5,9 +5,9 @@
     $search = '';
     if (isset($_GET) && $_GET && $_GET['search']){
         $search = $_GET['search'];
-        $sql = "SELECT * FROM `product` WHERE `name` LIKE '%" . $_GET['search'] . "%' or `price` LIKE '%" . $_GET['search'] . "%';";
+        $sql = "SELECT * FROM `dashboard` WHERE `name` LIKE '%" . $_GET['search'] . "%' or `price` LIKE '%" . $_GET['search'] . "%';";
     }else {
-        $sql = "SELECT * FROM `product`";
+        $sql = "SELECT * FROM `dashboard`";
     }
 
       $result = $conn->query($sql);

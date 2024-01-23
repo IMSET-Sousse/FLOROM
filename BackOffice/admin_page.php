@@ -13,7 +13,7 @@ if(isset($_POST['add_product'])){
    if(empty($product_name) || empty($product_price) || empty($product_image)){
       $message[] = 'Please fill out all';
    }else{
-      $insert = "INSERT INTO product(name, price, image) VALUES('$product_name', '$product_price', '$product_image')";
+      $insert = "INSERT INTO dashboard(name, price, image) VALUES('$product_name', '$product_price', '$product_image')";
       $upload = mysqli_query($conn,$insert);
       if($upload){
          move_uploaded_file($product_image_tmp_name, $product_image_folder);
@@ -27,7 +27,7 @@ if(isset($_POST['add_product'])){
 
 if(isset($_GET['delete'])){
    $id = $_GET['delete'];
-   mysqli_query($conn, "DELETE FROM product WHERE id = $id");
+   mysqli_query($conn, "DELETE FROM dashboard WHERE id = $id");
    header('location:admin_page.php');
 };
 
@@ -99,7 +99,7 @@ if(isset($message)){
 
    <?php
 
-   $select = mysqli_query($conn, "SELECT * FROM products");
+   $select = mysqli_query($conn, "SELECT * FROM dashboard");
    
    ?>
    <div class="product-display">
