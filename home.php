@@ -15,7 +15,7 @@
     <!-- fontawsom link -->
     <script src="https://kit.fontawesome.com/1ed826f313.js" crossorigin="anonymous"></script>
     <style>
-        .welcome-message {
+        .message {
             font-size: 22px;
             font-weight: bold;
             color: grey;
@@ -32,7 +32,7 @@
   
     <?php 
         if ($logedin == TRUE) {
-            echo "<p class='welcome-message'>Hello, " . $_SESSION["name"] . "</p>";
+            echo "<p class='message'>Hello, " . $_SESSION["name"] . "</p>";
         }
     ?>
 
