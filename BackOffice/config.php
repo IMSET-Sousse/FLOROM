@@ -1,5 +1,5 @@
 <?php
 
-$conn = mysqli_connect('localhost','root','','cart_db');
+$conn = mysqli_connect('localhost','root','','florom');
 
 ?>
