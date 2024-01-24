@@ -20,7 +20,7 @@
                             DRESSES
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="Dress.php">All</a></li>
+                            <li><a class="dropdown-item" href="product.php">All</a></li>
                             <li>
                                 <a class="dropdown-item" href="#">Little White Dresses</a>
                             </li>

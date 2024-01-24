@@ -1,110 +1,13 @@
-<?php
-include("lib/connection.php");
 
-$search = '';
-if (isset($_GET) && $_GET && $_GET['search']) {
-  $search = $_GET['search'];
-  $sql = "SELECT * FROM `product` WHERE `name` LIKE '%" . $_GET['search'] . "%' or `price` LIKE '%" . $_GET['search'] . "%';";
-} else {
-  $sql = "SELECT * FROM `product`";
-}
-
-$result = $conn->query($sql);
-$conn->close();
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home</title>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <!-- bootstrap-links -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <!-- fontawsom link -->
-  <script src="https://kit.fontawesome.com/1ed826f313.js" crossorigin="anonymous"></script>
-</head>
-<style>
-
-
-
-</style>
-
-<body>
-
-  <?php include("./lib/nav.php") ?>
-  <!-- Search bar -->
-  <form action="Tuxedos.php" method="get" class="boxcontainer">
-    <table class="elementscontainer">
-      <tr>
-        <td>
-          <input type="text" name="search" id="search" class="search" placeholder="Search" value="<?= $search ?>">
-        </td>
-        <td>
-          <button type="submit" id="search-btn" value="Search">
-            <i class="fa-solid fa-magnifying-glass" style="color: #d1b3c4;"></i>
-          </button>
-        </td>
-      </tr>
-    </table>
-  </form>
-  <!-- product section -->
-
-  <section class="product_section layout_padding2-top layout_padding-bottom">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Tuxedos
-        </h2>
-        <p>
-          which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't an
-        </p>
-      </div>
-      <div class="row">
-
-        <?php
-        // Check if there are search results
-        if ($result->num_rows > 0) {
-          while ($row = $result->fetch_assoc()) {
-        ?>
-            <div class="col-sm-6 col-lg-4">
-              <div class="box">
-                <div class="img-box">
-                  <a href="#">
-                    <img src="<?php echo $row['image']; ?>" alt="">
-                  </a>
-                </div>
-                <div class="detail-box">
-                  <span class="rating">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                  </span>
-                  <a href="">
-                    <?php echo $row['name']; ?>
-                  </a>
-                  <div class="price_box">
-                    <h6 class="price_heading">
-                      <span>$</span> <?php echo $row['price']; ?>
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-        <?php
-          }
-        } else {
-          echo "<p>No results found.</p>";
-        }
-        ?>
-
-      </div>
+<section class="info_section ">
+    <div class="info_logo">
+      <a class="navbar-brand" href="home.html">
+        <span>
+          FLOROM
+        </span>
+      </a>
     </div>
   </section>
-
   <!-- Footer -->
   <footer class="text-center text-lg-start bg-body-tertiary text-muted">
     <!-- Section: Social media -->
@@ -224,7 +127,3 @@ $conn->close();
     </div>
 
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
-
-</html>

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,732 +24,103 @@
 
   <br><br>
 
-  <section class="product_section layout_padding2-top layout_padding-bottom">
+      <!-- Search bar -->
+      <form class="boxcontainer">
+        <table class="elementscontainer">
+            <tr>
+                <td>
+                    <input type="text" name="search" id="search" class="search" placeholder="Search">
+                </td>
+                <td>
+                    <button type="submit" id="search-btn" value="Search">
+                        <i class="fa-solid fa-magnifying-glass" style="color: #0fbcf9;"></i>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br><br>
+    <!--cards-->
+
+    <section class="product_section layout_padding2-top layout_padding-bottom">
     <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Bridal Dresses </h2>
-        <p>
-          which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't an
-        </p>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box">
-              <a href="">
-                <img src="images\Set-4XLWG3861-10938818-Ivory_Champagne.webp" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                Off-the-Shoulder Lace-Up Back Wedding Dress
-              </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 999.00
-                </h6>
-              </div>
-            </div>
-          </div>
+        <div class="heading_container heading_center">
+            <h2>
+                Bridal Dresses
+            </h2>
+            <p>
+                which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't an
+            </p>
         </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box">
-              <a href="#">
-                <img src="images\Set-4XLWG4017-11394169-White.webp" alt=""></a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-              </span>
-              <a href="">
+        <div class="row">
+            <?php
+            // Example data (replace this with your dynamic data or database queries)
+            $products = array(
+                array("name" => "Off-the-Shoulder Lace-Up Back Wedding Dress", "price" => 999.00, "image" => "images\Set-4XLWG3861-10938818-Ivory_Champagne.webp"),
+                array("name" => "Strapless Satin Wedding Dress with Slit", "price" => 899.00, "image" => "images\Set-4XLWG4017-11394169-White.webp"),
+                array("name" => "illusion plunge v-neck lace wedding gown", "price" => 599.00, "image" => "images\CWG924_IVYCSHCOCO_OLEG_PROD6_075.webp"),
+                array("name" => "Beaded Scroll and Lace Mermaid Wedding Dress", "price" => 999.00, "image" => "images\SWG835_IVORY_SIG_PROD9_021.webp"),
+                array("name" => "Cummerbund Satin Ball Gown Wedding Dress", "price" => 799.00, "image" => "images\V3848_IVORY_DBSTU_PROD11_V2_083_front.webp"),
+                array("name" => "Sheer lace and tulle ball gown wedding dress", "price" => 999.00, "image" => "images\WG3861_IVYBLACK_CORE_PROD2_096.webp"),
 
-                Strapless Satin Wedding Dress with Slit
-              </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 899.00
-                </h6>
-              </div>
-            </div>
-          </div>
+                 array("name" => "ruffled charmeuse v-neck long sleeve mini dress", "price" => 999.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/SDWG1103_SOFTWHITE_DBSTU_PROD2_V2_017?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+                array("name" => "crochet lace overlay midi dress", "price" => 899.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/SDWG0773_IVYNUDE_DBSTU_PROD10_046?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+                array("name" => " 3d floral lace applique crepe mini dress", "price" => 599.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/SDWG1132_SOFTWHITE_DBSTU_PROD2_003?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+                array("name" => "crepe illusion waist sheath dress", "price" => 999.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/AMN4272_BLACK_PROM_PROD10_0280?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+                array("name" => "cutout one-shoulder crepe gown with skirt slit", "price" => 799.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/WBM2061_MBLACK_PRTY_PROD1_022?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+                array("name" => "stretch satin one-shoulder ruched sheath dress ", "price" => 999.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/APB4310_BLACK_PROM_PROD10_0356?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+
+                array("name" => "Off-the-Shoulder Ruched Short Mesh Dress", "price" => 999.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/MIDWG3979_IVORY_DBSTU_PROD9_175?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+                array("name" => "off-the-shoulder appliqued a-line wedding dress", "price" => 899.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/WG4113_SFTWHT_DBSTU_PROD9_0067?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+                array("name" => "floral applique long sleeve satin mini dress", "price" => 599.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/SDWG1095_SOFTWHITE_DBSTU_PROD5_034?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+                array("name" => "long sleeve chiffon sweetheart mini a-line", "price" => 999.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/2460BN_MWHITE_PARTY_PROD2_1174?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+                array("name" => "straight neck stretch satin pleated short dress", "price" => 799.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/HVMP4310DB_MIVORY_JRPRTY_PROD2_235?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+                array("name" => "charmeuse halter bridesmaid dress", "price" => 999.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/Image-GS290122-11613859-SteelBlue?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+
+                array("name" => "sequin sheath dress with 3d flowers", "price" => 999.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/WBM3915V1_BAHAMA_PROM_PROD1_1430?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+                array("name" => "charmeuse flutter-sleeve a-line bridesmaid dress", "price" => 899.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/GS290034_SAND_BM_PROD4_052?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+                array("name" => "plunging satin tank sheath dress with slit", "price" => 599.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/A25610D_MTEAL_PROM_PROD10_1021?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+                array("name" => "spaghetti strap ruched stretch jersey dress", "price" => 999.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/WBM3023_CINNAMON_PARTY_PROD2_043?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+                array("name" => "stretch satin cowl corset sheath dress", "price" => 799.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/WBM3674_LIPSTICK_PRTY_PROD10_854?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75"),
+                array("name" => "ball gown silhouette slip", "price" => 999.00, "image" => "https://img.davidsbridal.com/is/image/DavidsBridalInc/BALLGOWNSLIP_WHITE_LING_OM_PROD10_0628_H?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75")
+
+               
+                
+            );
+
+            // Loop through products and generate HTML
+            foreach ($products as $product) {
+                echo '<div class="col-sm-6 col-lg-4">
+                        <div class="box">
+                            <div class="img-box">
+                                <a href="#">
+                                    <img src="' . $product["image"] . '" alt="">
+                                </a>
+                            </div>
+                            <div class="detail-box">
+                                <span class="rating">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                </span>
+                                <a href="#">
+                                    ' . $product["name"] . '
+                                </a>
+                                <div class="price_box">
+                                    <h6 class="price_heading">
+                                        <span>$</span> ' . number_format($product["price"], 2) . '
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>';
+            }
+            ?>
         </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box">
-              <a href="#">
-                <img src="images\CWG924_IVYCSHCOCO_OLEG_PROD6_075.webp" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                illusion plunge v-neck lace wedding gown
-              </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 599.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box">
-              <a href="#">
-                <img src="images\SWG835_IVORY_SIG_PROD9_021.webp" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                Beaded Scroll and Lace Mermaid Wedding Dress
-              </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 999.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box">
-              <a href="#">
-                <img src="images\V3848_IVORY_DBSTU_PROD11_V2_083_front.webp" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                Cummerbund Satin Ball Gown Wedding Dress
-              </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 799.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="images\WG3861_IVYBLACK_CORE_PROD2_096.webp" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                Sheer lace and tulle ball gown wedding dress
-              </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 999.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/SDWG1103_SOFTWHITE_DBSTU_PROD2_V2_017?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                ruffled charmeuse v-neck long sleeve mini dress </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 999.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/SDWG0773_IVYNUDE_DBSTU_PROD10_046?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                crochet lace overlay midi dress
-              </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 999.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/SDWG1132_SOFTWHITE_DBSTU_PROD2_003?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                3d floral lace applique crepe mini dress
-              </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 999.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/AMN4272_BLACK_PROM_PROD10_0280?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                crepe illusion waist sheath dress
-              </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 999.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/WBM2061_MBLACK_PRTY_PROD1_022?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                cutout one-shoulder crepe gown with skirt slit </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 129.25
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/APB4310_BLACK_PROM_PROD10_0356?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                stretch satin one-shoulder ruched sheath dress </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 239.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/MIDWG3979_IVORY_DBSTU_PROD9_175?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                Off-the-Shoulder Ruched Short Mesh Dress </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 239.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/D40NY22242_ORCHID_MOB_PROD1_017?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                off-the-shoulder pleated satin a-line </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 71.99
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/WG4113_SFTWHT_DBSTU_PROD9_0067?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                off-the-shoulder appliqued a-line wedding dress </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 599.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/SDWG1095_SOFTWHITE_DBSTU_PROD5_034?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                floral applique long sleeve satin mini dress </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 239.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/2460BN_MWHITE_PARTY_PROD2_1174?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                long sleeve chiffon sweetheart mini a-line </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 71.99
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/HVMP4310DB_MIVORY_JRPRTY_PROD2_235?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                straight neck stretch satin pleated short dress </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 599.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/Image-GS290122-11613859-SteelBlue?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                charmeuse halter bridesmaid dress
-              </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 239.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/WBM3915V1_BAHAMA_PROM_PROD1_1430?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                sequin sheath dress with 3d flowers
-              </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 71.99
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/GS290034_SAND_BM_PROD4_052?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                charmeuse flutter-sleeve a-line bridesmaid dress </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 599.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/A25610D_MTEAL_PROM_PROD10_1021?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                plunging satin tank sheath dress with slit
-              </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 599.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/WBM3023_CINNAMON_PARTY_PROD2_043?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                spaghetti strap ruched stretch jersey dress </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 599.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/WBM3674_LIPSTICK_PRTY_PROD10_854?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                stretch satin cowl corset sheath dress
-              </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 599.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/BALLGOWNSLIP_WHITE_LING_OM_PROD10_0628_H?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                ball gown silhouette slip
-              </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 239.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/ALINESLIP_WHITE_LING_OM_PROD10_1286_H?wid=1080&hei=1620&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                a-line silhouette slip
-              </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 719.99
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-
-            <div class="img-box">
-              <a href="#">
-                <img src="https://img.davidsbridal.com/is/image/DavidsBridalInc/TRUMPETSLIP_WHITE_LING_OM_PROD10_1556_H?wid=640&hei=980&fit=constrain,1&resmode=sharp2&op_usm=2.5,0.3,4&fmt=webp&qlt=75" alt=""> </a>
-            </div>
-            <div class="detail-box">
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-              </span>
-              <a href="">
-
-                trumpet silhouette slip </a>
-              <div class="price_box">
-                <h6 class="price_heading">
-                  <span>$</span> 599.00
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </section>
+    </div>
+</section>
   <br>
 
   <section class="info_section ">

@@ -505,3 +505,44 @@ hr.style-five:after {
     padding: 0 1em;
   }
 }
+
+/*--search bar--*/
+
+.boxcontainer {
+  margin: auto;
+  margin-top: 10%;
+  position: relative;
+  width: 500px;
+  height: 42px;
+  border: 2px solid #d1b3c4;
+  padding: 0px 10px;
+  border-radius: 50px;
+}
+.elementscontainer {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+.search {
+  border: none;
+  height: 100%;
+  width: 100%;
+  padding: 0px 5px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-family: "nunito";
+  color: #000;
+  font-weight: 500;
+}
+.search:focus {
+  outline: none;
+}
+#search-btn {
+  background: none;
+  border: none;
+  color: none;
+  padding: none;
+}
+.fa-solid {
+  font-size: 26;
+}
