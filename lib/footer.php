@@ -1,7 +1,7 @@
 
 <section class="info_section ">
     <div class="info_logo">
-      <a class="navbar-brand" href="home.html">
+      <a class="navbar-brand" href="home.php">
         <span>
           FLOROM
         </span>

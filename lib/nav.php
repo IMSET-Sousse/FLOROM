@@ -70,7 +70,7 @@
                         <a class="nav-link mx-2" href="#">BLOG</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-2" href="#">ABOUT US</a>
+                        <a class="nav-link mx-2" href="about.php">ABOUT US</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mx-2" href="contact.php">CONTACT US</a>
