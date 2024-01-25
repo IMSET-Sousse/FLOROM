@@ -95,13 +95,13 @@
                         <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
                                 <a href="#" class="sidebar-link collapsed" data-bs-target="#level-1"
-                                    data-bs-toggle="collapse" aria-expanded="false">Level 1</a>
+                                    data-bs-toggle="collapse" aria-expanded="false">Type</a>
                                 <ul id="level-1" class="sidebar-dropdown list-unstyled collapse">
                                     <li class="sidebar-item">
-                                        <a href="#" class="sidebar-link">Level 1.1</a>
+                                        <a href="#" class="sidebar-link">Type 1</a>
                                     </li>
                                     <li class="sidebar-item">
-                                        <a href="#" class="sidebar-link">Level 1.2</a>
+                                        <a href="#" class="sidebar-link">Type 2</a>
                                     </li>
                                 </ul>
                             </li>
@@ -119,7 +119,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <img src="image/profile.jpg" class="avatar img-fluid rounded" alt="">
+                                <img src="image/face-happy-girl-avatar-laughing-260nw-1459862774.jpg" class="avatar img-fluid rounded" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="#" class="dropdown-item">Profile</a>
@@ -147,7 +147,7 @@
                                             </div>
                                         </div>
                                         <div class="col-6 align-self-end text-end">
-                                            <img src="image/customer-support.jpg" class="img-fluid illustration-img"
+                                            <img src="image/organic-flat-customer-support-illustration_23-2148899134.avif" class="img-fluid illustration-img"
                                                 alt="">
                                         </div>
                                     </div>
@@ -239,7 +239,7 @@
                         <div class="col-6 text-start">
                             <p class="mb-0">
                                 <a href="#" class="text-muted">
-                                    <strong>CodzSwod</strong>
+                                    <strong>FLOROM</strong>
                                 </a>
                             </p>
                         </div>

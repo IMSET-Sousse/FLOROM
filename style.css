@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300&family=Tangerine:wght@700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -43,6 +45,25 @@
 
 
 /* carousel */
+#caption{
+  text-align: right;
+  margin-bottom: 100px;
+  margin-bottom: 180px;
+}
+#caption h6{
+  margin-bottom: -30px;
+  margin-top: -70px;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 40px;
+  margin-right: 60px;
+  color: #D1B3C4;
+}
+#caption h1{
+  font-family: 'Tangerine', cursive;
+  font-size: 200px;
+  margin-right: 20px;
+  color: #D1B3C4;
+}
 
 #carouselExampleFade img {
   width: 100%;

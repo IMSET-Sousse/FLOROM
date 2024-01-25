@@ -14,6 +14,10 @@
     />
     <!-- fontawsom link -->
     <script src="https://kit.fontawesome.com/1ed826f313.js" crossorigin="anonymous"></script>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300&family=Tangerine:wght@700&display=swap" rel="stylesheet">
   </head>
   <style>
   .message {
@@ -44,8 +48,10 @@
             class="d-block w-100"
             alt="..."
           />
-          <div class="carousel-caption d-none d-md-block">
-            <h1>First slide label</h1>
+          <div class="carousel-caption d-none d-md-block" id="caption">
+            <h6>JUST SAY</h6>
+           <h1>YES !</h1> 
+           <h6>WITH FLOROM</h6>
           </div>
         </div>
         <div class="carousel-item">
@@ -92,7 +98,7 @@
 
       <!-- wrapper -->
       <div class="quot">
-        <h1>Love Brought You Here. Us Too.</h1>
+        <h1>Love Brought You Here To Us</h1>
         <p>
           Nothing matters more to us than connection. Allure Bridals strives to
           provide everyone — from the engaged to members of the wedding party —
