@@ -2,12 +2,36 @@
 include_once("lib\connection.php");
 
 $search = '';
-if (isset($_GET) && $_GET && $_GET['search']) {
-  $search = $_GET['search'];
-  $sql = "SELECT * FROM `filter` WHERE `category` LIKE '%" . $_GET['search'] . "%' or `price` LIKE '%" . $_GET['search'] . "%';";
+$categoryFilter = '';
+$priceFilter = '';
+
+// Check if search parameter is provided
+if (isset($_GET['search']) && !empty($_GET['search'])) {
+    $search = $_GET['search'];
+    $searchCondition = "(`product_name` LIKE '%" . $search . "%' or `category` LIKE '%" . $search . "%' or `price` LIKE '%" . $search . "%')";
 } else {
-  $sql = "SELECT * FROM `filter`";
+    $searchCondition = '1'; // Default condition if no search parameter
 }
+
+// Check if category filter is provided
+if (isset($_GET['category'])) {
+    $categoryFilter = $_GET['category'];
+    $categoryCondition = "`category` = '" . $categoryFilter . "'";
+} else {
+    $categoryCondition = '1'; // Default condition if no category filter
+}
+
+// Check if price filter is provided
+if (isset($_GET['price'])) {
+    $priceFilter = $_GET['price'];
+    // Assuming price filter is a range, you may need to modify this condition based on your requirements
+    $priceCondition = "`price` BETWEEN " . $priceFilter;
+} else {
+    $priceCondition = '1'; // Default condition if no price filter
+}
+
+// Construct the SQL query with the filter conditions
+$sql = "SELECT * FROM `filter` WHERE " . $searchCondition . " AND " . $categoryCondition . " AND " . $priceCondition;
 
 $result = $conn->query($sql);
 $conn->close();
@@ -66,10 +90,10 @@ $conn->close();
 					<div class="sidebar__inner ">
 						<div class="filter-body">
 							<div>
-								<h2 class="border-bottom filter-title">Categories</h2>
+								<h2 class="border-bottom filter-title">Type</h2>
 								<div class="mb-30 filter-options">
 									<div class="custom-control custom-checkbox mb-3">
-										<input type="checkbox" class="custom-control-input" id="Indoor" checked>
+										<input type="checkbox" class="custom-control-input" id="Indoor">
 										<label class="custom-control-label" for="Indoor">Toxidos</label>
 									</div>
 									<div class="custom-control custom-checkbox mb-3">
@@ -77,39 +101,40 @@ $conn->close();
 										<label class="custom-control-label" for="Outdoor">Dresse</label>
 									</div>
 								</div>
-					
-								<h2 class="font-xbold body-font border-bottom filter-title">Short Dresses</h2>
+								<form action="product.php" method="get">
+								<h2 class="font-xbold body-font border-bottom filter-title">Categories</h2>
 								<div class="mb-3 filter-options" id="cusine-options">
 									<div class="custom-control custom-checkbox mb-3">
-										<input type="checkbox" class="custom-control-input" id="Chinese" checked>
-										<label class="custom-control-label" for="Chinese">Long Dresses</label>
+										<input type="checkbox" class="custom-control-input" id="LongDress" name="category" value="Long Dress" <?php echo ($categoryFilter == 'Long Dress') ?  : ''; ?>>
+										<label class="custom-control-label" for="Chinese">Long Dress</label>
 									</div>
 									<div class="custom-control custom-checkbox mb-3">
-										<input type="checkbox" class="custom-control-input" id="Italian">
-										<label class="custom-control-label" for="Italian">Short Dresses</label>
+										<input type="checkbox" class="custom-control-input" id="ShortDress" name="category" value="Short Dress" <?php echo ($categoryFilter == 'Short Dress') ?  : ''; ?>>
+										<label class="custom-control-label" for="Italian">Short Dress</label>
 									</div>
 									<div class="custom-control custom-checkbox mb-3">
-										<input type="checkbox" class="custom-control-input" id="Mexican">
-										<label class="custom-control-label" for="Mexican">Off The Solders</label>
+										<input type="checkbox" class="custom-control-input" id="OffTheShoulder" name="category" value="Off The Shoulder" <?php echo ($categoryFilter == 'Off The Shoulder') ?  : ''; ?>>
+										<label class="custom-control-label" for="Mexican">Off The Shoulder</label>
 									</div>
 									<div class="custom-control custom-checkbox mb-3">
-										<input type="checkbox" class="custom-control-input" id="Thai">
+										<input type="checkbox" class="custom-control-input" id="BallGown" name="category" value="Ball Gown" <?php echo ($categoryFilter == 'Ball Gown') ?  : ''; ?>>
 										<label class="custom-control-label" for="Thai">Ball Gown</label>
 									</div>
 									<div class="custom-control custom-checkbox mb-3">
-										<input type="checkbox" class="custom-control-input" id="Gujarati">
+										<input type="checkbox" class="custom-control-input" id="A-Line" name="category" value="A-Line" <?php echo ($categoryFilter == 'A-Line') ?  : ''; ?>>
 										<label class="custom-control-label" for="Gujarati">A-Line</label>
 									</div>
 									<div class="custom-control custom-checkbox mb-3">
-										<input type="checkbox" class="custom-control-input" id="Panjabi">
+										<input type="checkbox" class="custom-control-input" id="Mermaide" name="category" value="Mermaide" <?php echo ($categoryFilter == 'Mermaide') ?  : ''; ?>>
 										<label class="custom-control-label" for="Panjabi">Mermaide</label>
 									</div>
 									<div class="custom-control custom-checkbox mb-3">
-										<input type="checkbox" class="custom-control-input" id="South-Indian">
+										<input type="checkbox" class="custom-control-input" id="FitAndFlaire" name="category" value="Fit And Flaire" <?php echo ($categoryFilter == 'Fit And Flaire') ? : ''; ?>>
 										<label class="custom-control-label" for="South-Indian">Fit And Flaire</label>
 									</div>
 								</div>
-
+								<button type="submit" class="btn" id=btn>Apply Filters</button>
+    </form>
 					
 								<h2 class="font-xbold body-font border-bottom filter-title">Price Range</h2>
 								<div class="mb-3 theme-clr xs2-font d-flex justify-content-between">
@@ -130,7 +155,7 @@ $conn->close();
 								<h2 class="border-bottom filter-title">Toxidos</h2>
 								<div class="mb-3 filter-options" id="services-options">
 									<div class="custom-control custom-checkbox mb-3">
-										<input type="checkbox" class="custom-control-input" id="Breakfast" checked>
+										<input type="checkbox" class="custom-control-input" id="Breakfast">
 										<label class="custom-control-label" for="Breakfast">Burgundy</label>
 									</div>
 									<div class="custom-control custom-checkbox mb-3">
