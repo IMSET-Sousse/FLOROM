@@ -15,17 +15,25 @@
     <!-- fontawsom link -->
     <script src="https://kit.fontawesome.com/1ed826f313.js" crossorigin="anonymous"></script>
   </head>
+  <style>
+  .message {
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        </style>
   <body>
   <!--navbar start-->
   
   <?php include("./lib/nav.php") ?>
   
+  <center>
     <?php 
         if ($logedin == TRUE) {
             echo "<p class='message'>Hello, " . $_SESSION["name"] . "</p>";
         }
     ?>
-
+</center>
   <!--navbar end-->
     <!-- carousel -->
     <div id="carouselExampleFade" class="carousel slide carousel-fade">

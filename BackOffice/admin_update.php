@@ -1,6 +1,6 @@
 <?php
 
-@include 'config.php';
+@include 'C:\xampp\htdocs\FLOROM\lib\connection.php';
 
 $id = $_GET['edit'];
 

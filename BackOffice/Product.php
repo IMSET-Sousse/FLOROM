@@ -1,6 +1,6 @@
 <?php 
 
-    include("./config.php");
+@include 'C:\xampp\htdocs\FLOROM\lib\connection.php';
 
     $search = '';
     if (isset($_GET) && $_GET && $_GET['search']){

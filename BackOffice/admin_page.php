@@ -1,6 +1,6 @@
 <?php
 
-@include 'config.php';
+@include 'C:\xampp\htdocs\FLOROM\lib\connection.php';
 
 if(isset($_POST['add_product'])){
 
