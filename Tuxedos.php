@@ -1,5 +1,5 @@
 <?php
-include("lib/connection.php");
+include_once("lib\connection.php");
 
 $search = '';
 if (isset($_GET) && $_GET && $_GET['search']) {
