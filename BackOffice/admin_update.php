@@ -94,7 +94,7 @@ text-align: center;
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse"
                             aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
-                            Pages
+                            Product
                         </a>
                         <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
@@ -111,17 +111,17 @@ text-align: center;
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#posts" data-bs-toggle="collapse"
                             aria-expanded="false"><i class="fa-solid fa-sliders pe-2"></i>
-                            Posts
+                            Categorie
                         </a>
                         <ul id="posts" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Post 1</a>
+                                <a href="CatAdd.php" class="sidebar-link">Add</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Post 2</a>
+                                <a href="#" class="sidebar-link">Modify</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Post 3</a>
+                                <a href="#" class="sidebar-link">Delete</a>
                             </li>
                         </ul>
                     </li>

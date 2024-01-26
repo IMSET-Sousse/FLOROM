@@ -1,37 +1,26 @@
-<?php
 
-@include 'C:\xampp\htdocs\FLOROM\lib\connection.php';
-
-if(isset($_POST['add_product'])){
-
-   $product_name = $_POST['product_name'];
-   $product_price = $_POST['product_price'];
-   $product_image = $_FILES['product_image']['name'];
-   $product_image_tmp_name = $_FILES['product_image']['tmp_name'];
-   $product_image_folder = 'uploaded_img/'.$product_image;
-
-   if(empty($product_name) || empty($product_price) || empty($product_image)){
-      $message[] = 'Please fill out all';
-   }else{
-      $insert = "INSERT INTO dashboard(name, price, image) VALUES('$product_name', '$product_price', '$product_image')";
-      $upload = mysqli_query($conn,$insert);
-      if($upload){
-         move_uploaded_file($product_image_tmp_name, $product_image_folder);
-         $message[] = 'New product added successfully';
-      }else{
-         $message[] = 'Could not add the product';
-      }
-   }
-
-};
-
-if(isset($_GET['delete'])){
-   $id = $_GET['delete'];
-   mysqli_query($conn, "DELETE FROM dashboard WHERE id = $id");
-   header('location:add.php');
-};
-
+    <?php
+    @include 'C:\xampp\htdocs\FLOROM\lib\connection.php';
+    // Query to retrieve contact information from the database
+        $sql = "SELECT * FROM categorie";
+        $result = $conn->query($sql);
+        
+        
+        if(!$result){
+             die(mysqli_error());
+             exit();
+        }
 ?>
+
+
+
+
+
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
@@ -82,15 +71,7 @@ text-align: center;
 
 </style>
 <body>
-<?php
 
-if(isset($message)){
-   foreach($message as $message){
-      echo '<span class="message">'.$message.'</span>';
-   }
-}
-
-?>
     <div class="wrapper">
         <aside id="sidebar" class="js-sidebar">
             <!-- Content For Sidebar -->
@@ -130,7 +111,7 @@ if(isset($message)){
                         </a>
                         <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="add.php" class="sidebar-link">Add Product</a>
+                            <a href="add.php" class="sidebar-link">Add Product</a>
                             </li>
                             <li class="sidebar-item">
                                 <a href="edit.php" class="sidebar-link">Modify Product</a>
@@ -280,39 +261,89 @@ if(isset($message)){
    
 <div class="container">
 
-
-   <div id="admin_page">
-   <?php
-
-   $select = mysqli_query($conn, "SELECT * FROM dashboard");
-   
-   ?>
-   <div class="product-display">
-      <table class="product-display-table">
-         <thead>
-         <tr>
-            <th>Product Image</th>
-            <th>Product Name</th>
-            <th>Product Price</th>
-            <th>Action</th>
-         </tr>
-         </thead>
-         <?php while($row = mysqli_fetch_assoc($select)){ ?>
-         <tr>
-            <td><img src="uploaded_img/<?php echo $row['image']; ?>" height="100" alt=""></td>
-            <td><?php echo $row['name']; ?></td>
-            <td>$<?php echo $row['price']; ?>/-</td>
-            <td>
-               <a href="admin_update.php?edit=<?php echo $row['id']; ?>" class="btnn"> <i class="fas fa-edit"></i> edit </a>
-            </td>
-         </tr>
-      <?php } ?>
-      </table>
-   </div>
-
-</div>
-</body>
-</html>
+<div class="row ">
+                    <div class="col-sm-10">
+                        <p class="text-center">
+                            <strong>Add categories</strong>
+                        </p>
+                      
+                        <p class="text-center pt-3">
+                        </p>
+                        <form class="form-control mx-auto w-50" action="" method="post">
+                            <label class="pt-2 pb-4 text-center" for="categories">Choose a categorie</label>
+                            <select class="form-control" id="categories" name="categories">
+                                <option value="">------</option>
+                            <?php while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){ ?>
+                                     <option value="<?php echo $row['id'];?>"><?php echo ($row['title']); ?></option>
+                             <?php } ?>
+                             </select>
+                             <br>
+                            <label class="pt-1 pb-4 text-center">Enter a sub category</label>
+                            <input class="form-control" type="text" id="subcategory" placeholder="Enter a sub category">
+                            <br>
+                            <input type="button" class=" btnnn " onclick="addsubcategory()" value="Add a Sub category">
+                            <div class="error1 pt-2"></div><div class="success1 pt-2"></div>
+                        </form>
+                    </div>
+                    
+                    <div class="error2"></div><div class="success2"></div>
+                    <script>
+                        
+                        function addcategory(){
+                            var x = $('#category').val();
+                            var input = {
+                                "category" : x,
+                                "action" : 'addcategory'
+                            };
+                            $.ajax({
+                                url : 'controller.php',
+                                type : 'POST',
+                                dataType : "json",
+                                data : input,
+                                success : function(response)
+                                {
+                                    $('.success').html(response.message).show();
+                                    $('.error').hide();
+                                },
+                                error : function(response)
+                                {
+                                     $('.error').html("Sub category already exist.").show();
+                                     $('.success').hide();
+                                }
+                            });
+                            
+                        }
+                        function addsubcategory(){
+                            var x = $('#subcategory').val();
+                            var id = $('#categories').val();
+                            var input = {
+                                "subcategory" : x,
+                                "id" : id,
+                                "action" : 'addsubcategory'
+                            };
+                            $.ajax({
+                                url : 'controller.php',
+                                type : 'POST',
+                                dataType : "json",
+                                data : input,
+                                success : function(response)
+                                {
+                                    $('.success1').html(response.message).show();
+                                    $('.error1').hide();
+                                },
+                                error : function(response)
+                                {
+                                     $('.error1').html("Sub category already exist.").show();
+                                     $('.success1').hide();
+                                }
+                            });
+                            
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
                             <h6 class="card-subtitle text-muted">
                             This is The Product Dashboard.
                             </h6>
@@ -347,6 +378,19 @@ if(isset($message)){
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-</body>
 
+
+
+
+
+
+
+
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</body>
 </html>

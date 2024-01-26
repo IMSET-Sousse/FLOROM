@@ -51,7 +51,7 @@ if (isset($_POST) && $_POST) {
         <input type="checkbox" name="check" id="check">
         Remember me
       </label>
-      <a href="#">Forgot?</a><br><br>
+      <a href="./BackOffice\UserDash.php">Admin?</a><br><br>
       <input type="submit" id="btn" value="Log in" name="submit">
       <input type="submit" id="btn2" value="sign up" name="submit">
     </form>
