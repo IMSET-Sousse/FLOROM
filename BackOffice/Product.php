@@ -19,7 +19,7 @@
 <html>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Admin Dashboard</title>
     <link rel="stylesheet" href="Dashbo.css">
 
 <head>
@@ -59,7 +59,13 @@ hr.center-ball {
   background: grey;
 }
 
-   
+img {
+  width: 500px;
+  height: 500px;
+  border: 1px solid #000;
+}
+
+
 hr {
   color: #999; 
     height: 2px; 

@@ -1,7 +1,7 @@
 <?php
-    include_once("/xampp/htdocs/GalaGaze/lib/connection.php");
-    // Query to retrieve contact information from the database
-    $sql = "SELECT * FROM contact";
+@include 'C:\xampp\htdocs\FLOROM\lib\connection.php';
+// Query to retrieve contact information from the database
+    $sql = "SELECT * FROM product";
     $result = $conn->query($sql);
     
     ?>
@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Admin Dashboard</title>
+    <title>Admin Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -31,11 +31,26 @@
                         Admin Elements
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <i class="fa-solid fa-list pe-2"></i>
+                    <a href="#" class="sidebar-link collapsed" data-bs-target="#Dashboard" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
                             Dashboard
                         </a>
+                        <ul id="Dashboard" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                        <li class="sidebar-item">
+                                <a href="ProductDash.php" class="sidebar-link">Product</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="CategoryDash.php" class="sidebar-link">Categorie</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="userDash.php" class="sidebar-link">User</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="ContactDash.php" class="sidebar-link">Contact</a>
+                            </li>
                     </li>
+</ul>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse"
                             aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
@@ -43,10 +58,13 @@
                         </a>
                         <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="\GalaGaze\BackOffice\admin_page.php" class="sidebar-link">Product</a>
+                            <a href="add.php" class="sidebar-link">Add Product</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Categorie</a>
+                                <a href="edit.php" class="sidebar-link">Modify Product</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="delete.php" class="sidebar-link">Delete Product</a>
                             </li>
                         </ul>
                     </li>
@@ -183,11 +201,10 @@
                     <div class="card border-0">
                         <div class="card-header">
                             <h5 class="card-title">
-                                Contact Information
+                                Product Information
                             </h5>
                             <h6 class="card-subtitle text-muted">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ducimus,
-                                necessitatibus reprehenderit itaque!
+                            Here is our latest and newest Product Posted .
                             </h6>
                         </div>
                         <div class="card-body">
@@ -196,9 +213,12 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">name</th>
-                                        <th scope="col">email</th>
-                                        <th scope="col">subject</th>
-                                        <th scope="col">message</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">description</th>
+                                        <th scope="col">created-at</th>
+                                        <th scope="col">updated-at</th>
+                                        <th scope="col">image</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -210,10 +230,12 @@
                             echo "<tr>";
                             echo "<th scope='row'>" . $row["id"] . "</th>";
                             echo "<td>" . $row["name"] . "</td>";
-                            echo "<td>" . $row["email"] . "</td>";
-                            echo "<td>" . $row["subject"] . "</td>";
-                            echo "<td>" . $row["message"] . "</td>";
+                            echo "<td>" . $row["price"] . "</td>";
+                            echo "<td>" . $row["description"] . "</td>";
                             echo "<td>" . $row["created-at"] . "</td>";
+                            echo "<td>" . $row["updated-at"] . "</td>";
+                            echo "<td>" . $row["image"] . "</td>";
+
                             echo "</tr>";
                         }
                     } else {
@@ -243,22 +265,7 @@
                                 </a>
                             </p>
                         </div>
-                        <div class="col-6 text-end">
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-muted">Contact</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-muted">About Us</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-muted">Terms</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-muted">Booking</a>
-                                </li>
-                            </ul>
-                        </div>
+               
                     </div>
                 </div>
             </footer>

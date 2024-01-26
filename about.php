@@ -322,7 +322,7 @@
 
 <body>
     <!-- navbar -->
-    <?php include("./lib/nav.php") ?>
+    <?php include("./lib/ForAbout.php") ?>
 
 
     <section class="about-section">

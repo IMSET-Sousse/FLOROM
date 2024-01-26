@@ -40,16 +40,7 @@ html{
    background: var(--bg-color);
 }
 
-.message{
-   font-family: 'Poppins', sans-serif;
 
-   display: block;
-   padding:1.5rem 1rem;
-   font-size: 2rem;
-   color:var(--black);
-   margin-bottom: 2rem;
-   text-align: center;
-}
 
 .container{
    max-width: 1200px;

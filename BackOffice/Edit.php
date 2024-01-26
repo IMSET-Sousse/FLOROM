@@ -2,9 +2,7 @@
 
 @include 'C:\xampp\htdocs\FLOROM\lib\connection.php';
 
-$id = $_GET['edit'];
-
-if(isset($_POST['update_product'])){
+if(isset($_POST['add_product'])){
 
    $product_name = $_POST['product_name'];
    $product_price = $_POST['product_price'];
@@ -13,23 +11,28 @@ if(isset($_POST['update_product'])){
    $product_image_folder = 'uploaded_img/'.$product_image;
 
    if(empty($product_name) || empty($product_price) || empty($product_image)){
-      $message[] = 'please fill out all!';    
+      $message[] = 'Please fill out all';
    }else{
-
-      $update_data = "UPDATE dashboard SET name='$product_name', price='$product_price', image='$product_image'  WHERE id = '$id'";
-      $upload = mysqli_query($conn, $update_data);
-
+      $insert = "INSERT INTO dashboard(name, price, image) VALUES('$product_name', '$product_price', '$product_image')";
+      $upload = mysqli_query($conn,$insert);
       if($upload){
          move_uploaded_file($product_image_tmp_name, $product_image_folder);
-         header('location:add.php');
+         $message[] = 'New product added successfully';
       }else{
-         $$message[] = 'please fill out all!'; 
+         $message[] = 'Could not add the product';
       }
-
    }
+
+};
+
+if(isset($_GET['delete'])){
+   $id = $_GET['delete'];
+   mysqli_query($conn, "DELETE FROM dashboard WHERE id = $id");
+   header('location:add.php');
 };
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
@@ -49,16 +52,45 @@ padding:1.1rem;
 color:white;
 text-align: center;
 }
+
+
+.container{
+   max-width: 1200px;
+   padding:2rem;
+   margin:0 auto;
+}
+
+
+
+
+
+
+.product-display{
+   margin:2rem 0;
+}
+
+.product-display .product-display-table{
+   width: 100%;
+   text-align: center;
+}
+
+
+
+
+
+
+
 </style>
 <body>
 <?php
-   if(isset($message)){
-      foreach($message as $message){
-         echo '<span class="message">'.$message.'</span>';
-      }
-   }
-?>
 
+if(isset($message)){
+   foreach($message as $message){
+      echo '<span class="message">'.$message.'</span>';
+   }
+}
+
+?>
     <div class="wrapper">
         <aside id="sidebar" class="js-sidebar">
             <!-- Content For Sidebar -->
@@ -98,7 +130,7 @@ text-align: center;
                         </a>
                         <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                            <a href="add.php" class="sidebar-link">Add Product</a>
+                                <a href="add.php" class="sidebar-link">Add Product</a>
                             </li>
                             <li class="sidebar-item">
                                 <a href="edit.php" class="sidebar-link">Modify Product</a>
@@ -243,36 +275,44 @@ text-align: center;
                             <h5 class="card-title">
                                 Product Information
                             </h5>
-                            <div class="container">
+                           
+
+   
+<div class="container">
 
 
-<div class="admin-product-form-container centered">
-
+   <div id="admin_page">
    <?php
-      
-      $select = mysqli_query($conn, "SELECT * FROM dashboard WHERE id = '$id'");
-      while($row = mysqli_fetch_assoc($select)){
 
+   $select = mysqli_query($conn, "SELECT * FROM dashboard");
+   
    ?>
-   
-   <form action="" method="post" enctype="multipart/form-data">
-      <h3 class="title">update the product</h3>
-      <input type="text" class="box" name="product_name" value="<?php echo $row['name']; ?>" placeholder="enter the product name">
-      <input type="number" min="0" class="box" name="product_price" value="<?php echo $row['price']; ?>" placeholder="enter the product price">
-      <input type="file" class="box" name="product_image"  accept="image/png, image/jpeg, image/jpg">
-      <input type="submit" value="update product" name="update_product" class="btnnn">
-      <a href="admin_page.php" class="btn">go back!</a>
-   </form>
-   
-
-
-   <?php }; ?>
-
-   
+   <div class="product-display">
+      <table class="product-display-table">
+         <thead>
+         <tr>
+            <th>Product Image</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Action</th>
+         </tr>
+         </thead>
+         <?php while($row = mysqli_fetch_assoc($select)){ ?>
+         <tr>
+            <td><img src="uploaded_img/<?php echo $row['image']; ?>" height="100" alt=""></td>
+            <td><?php echo $row['name']; ?></td>
+            <td>$<?php echo $row['price']; ?>/-</td>
+            <td>
+               <a href="admin_update.php?edit=<?php echo $row['id']; ?>" class="btnn"> <i class="fas fa-edit"></i> edit </a>
+            </td>
+         </tr>
+      <?php } ?>
+      </table>
+   </div>
 
 </div>
-
-</div>
+</body>
+</html>
                             <h6 class="card-subtitle text-muted">
                             This is The Product Dashboard.
                             </h6>
@@ -307,11 +347,6 @@ text-align: center;
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-
-
-
-
-
-
 </body>
+
 </html>

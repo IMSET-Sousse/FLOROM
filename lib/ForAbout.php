@@ -1,5 +1,11 @@
-<?php include_once('lib\auth-required.php'); ?>
-
+<?php
+$logedin = FALSE;
+if (isset($_SESSION['id'])) {
+    $logedin = TRUE;
+} else {
+    $logedin = FALSE;
+}
+?>
 <!-- top-bar -->
 <div class="top-bar">
     <a class="bar-brand" href="home.php"><img src="image/logo.png" id="logo" /></a>
